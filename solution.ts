@@ -10,18 +10,12 @@ const formatValue = (value: inputType) : inputType | undefined => {
   else if(typeof value === "boolean"){
     return !value;
   }
-  else{
-    console.log("invalid input")
-  }
+  return undefined;
 }
 
 const result = formatValue("hello");
 const result2 = formatValue(5);
 const result3 = formatValue(true);
-
-// console.log(result);
-// console.log(result2);
-// console.log(result3);
 
 type lengthInputType = string | any[];
 
@@ -31,9 +25,6 @@ const getLength = (value: lengthInputType) : number => {
 
 const lengthResult = getLength('typescript');
 const lengthResult2 = getLength([10, 20, 30, 40]);
-
-// console.log(lengthResult);
-// console.log(lengthResult2);
  
 class Person {
     name: string;
@@ -50,10 +41,8 @@ class Person {
 }
 
 const person1 = new Person('John Doe', 30);
-// console.log(person1.getDetails());
 
 const person2 = new Person('Alice', 25);
-// console.log(person2.getDetails());
 
 type itemType = {
     title: string;
@@ -69,8 +58,6 @@ const books = [
   { title: 'Book B', rating: 3.2 },
   { title: 'Book C', rating: 5.0 },
 ];
-
-// console.log(filterByRating(books));
 
 type User = {
     id: number;
@@ -88,8 +75,6 @@ const users = [
   { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
   { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
-
-// console.log(filterActiveUsers(users));
 
 interface Book {
     title: string;
@@ -110,8 +95,6 @@ const myBook: Book = {
   publishedYear: 1925,
   isAvailable: true,
 };
-
-// console.log(printBookDetails(myBook));
 
 type arrayType = string | number;
 const getUniqueValues = (arr1: arrayType[], arr2: arrayType[]) : arrayType[] | [] => {
@@ -151,7 +134,6 @@ const getUniqueValues = (arr1: arrayType[], arr2: arrayType[]) : arrayType[] | [
 
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
-// console.log(getUniqueValues(array1, array2));
 
 interface IProduct {
     name: string;
@@ -170,5 +152,3 @@ const products = [
   { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
   { name: 'Bag', price: 50, quantity: 1, discount: 20 },
 ];
-
-console.log(calculateTotalPrice(products));
